@@ -9,12 +9,12 @@ Supported file format:
 .m4a, .mp3, .wav, .raw
 
 ## Notice:
-1. you need depedency package: wave, pydub
+1. you need dependency packages: wave, pydub
 2. Only tested on python 3.7 but it should work on all python3 versions.
 
 ## usage
 
-For mac user, you can just run `exe/sound2mif_mac` and it should work. If not or you are using other OS, you can follow the instructions below
+For mac user, you can just run `exe/sound2mif_mac` and it should work. If not or you are using other operating systems, you can follow the instructions below
 
 1. Open command line.
 
