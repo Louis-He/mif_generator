@@ -25,15 +25,19 @@ python3 main.py
 ```Bash
 sudo pip3 install -r requirements.txt
 ```
+2. Recommendation of parameters
+  * Frame rate（Hz）: at least 5000Hz.
+  * bits width: 5 or more.
 
-2. Example of execuating
+3. Example of execuating
 ```
 FileName: sample.m4a
 Need to cut the sound track:(y? stay blank if not) y
-initial:(ms) 0
-final:(ms) 10000
+start point:(ms) 0
+end point:(ms) 10000
 original frame rate of sound track: 44100 Hz
-Set new frame rate:(Hz) 6000 
+Set new frame rate:(Hz) 6000
+Set bits width: 6
 [INFO] Exporting sample_out.wav
 [INFO] wav params is : _wave_params(nchannels=1, sampwidth=1, framerate=6000, nframes=60000, comptype='NONE', compname='not compressed')
 [INFO] Converting sample_out.wav to mif
