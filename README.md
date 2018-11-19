@@ -1,7 +1,7 @@
 # sound2mif [![](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-371/)
 
 ## Introduction
-convert sound file to mid for FPGA
+convert audio file to mid for FPGA
 
 You can convert sound track to .mif file.
 
