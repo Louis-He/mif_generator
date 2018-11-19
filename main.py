@@ -3,6 +3,8 @@ import wave
 #import array
 from pydub import *
 #from matplotlib import pyplot
+print('sound2mif.py now supports file format: .m4a, .mp3, .wav, and .raw')
+
 while True:
     fileName = input('FileName: ')
     type = ""
