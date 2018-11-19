@@ -31,8 +31,8 @@ while True:
 
             cut = input('Need to cut the sound track:(y? stay blank if not) ')
             if cut.lower() == 'y':
-                initial = input('initial:(ms) ')
-                final = input('final:(ms) ')
+                initial = input('start point:(ms) ')
+                final = input('end point:(ms) ')
                 initial = int(initial)
                 final = int(final)
                 original_audio_file = original_audio_file[initial : final]
@@ -40,10 +40,10 @@ while True:
             print('original frame rate of sound track: ' + str(original_audio_file.frame_rate) + ' Hz')
 
             original_audio_file = original_audio_file.set_channels(channels=1)
-            frameRate = input('Set new frame rate:(Hz) ')
+            frameRate = int(input('Set new frame rate:(Hz) '))
+            bits = int(input('Set bits width: '))
             try:
                 # lower the quality of the sound track
-                frameRate = int(frameRate)
                 original_audio_file = original_audio_file.set_frame_rate(frame_rate=frameRate)
                 original_audio_file = original_audio_file.set_sample_width(1)
 
@@ -60,7 +60,7 @@ while True:
 
                     # open a txt file
                     LENGTH = f.getnframes()
-                    WIDTH = 3
+                    WIDTH = bits
                     try:
                         fData = open(fileName[:fileName.find('.')] + '.mif', 'w')
                         fData.write('Depth = ' + str(LENGTH) + ';\n')
