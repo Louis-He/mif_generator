@@ -87,10 +87,10 @@ while True:
                             #    sdata=sdata.replace('\\x',',')
                             fData.writelines(
                                 str(count) + '\t:\t' + str(
-                                    int(int(int(sdata[1:-1])) / pow(2, 8.0 - WIDTH))))  # 去掉开头和结尾的无关符号
+                                    int(int(int(sdata[1:-1])) / pow(2, 8.0 - WIDTH))))
                             # countList.append(count)
                             # soundwav.append(int(int(int(sdata[1:-1])) / pow(2, 8.0 - WIDTH)))
-                            fData.write(";\n")  # 添加逗号和换行
+                            fData.write(";\n")
                             count += 1
 
                         # pyplot.plot(countList, soundwav)
