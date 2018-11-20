@@ -34,7 +34,7 @@ sudo pip3 install -r requirements.txt
   * Frame rate（Hz）: at least 5000Hz.
   * bits width: 5 or more.
 
-4. Example of execuating
+4. Example of executing
 ```
 FileName: sample.m4a
 Need to cut the sound track:(y? stay blank if not) y
