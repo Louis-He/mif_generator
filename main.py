@@ -1,14 +1,16 @@
 #
 # Created by Siwei He on Nov 14, 2018
 #
-
-#import os
+import os
+import sys
 import wave
 #import array
 from pydub import *
 #from matplotlib import pyplot
 print('sound2mif.py now supports file format: .m4a, .mp3, .wav, and .raw')
 
+path = os.path.dirname(os.path.realpath(sys.argv[0])) + '/'
+print(path)
 while True:
     fileName = input('FileName: ')
     type = ""
@@ -25,6 +27,8 @@ while True:
     elif fileName.find('raw') != -1:
         type = 'raw'
         isRecognized = True
+    elif fileName.lower() == "quit":
+        exit(0)
     else:
         print('Error: Cannot recognize the format of the file.')
 
@@ -33,7 +37,7 @@ while True:
             # read in original sound track
             # print(fileName)
             # print(type)
-            original_audio_file = AudioSegment.from_file(fileName, type)
+            original_audio_file = AudioSegment.from_file(path + fileName, type)
 
             cut = input('Need to cut the sound track:(y? stay blank if not) ')
             if cut.lower() == 'y':
@@ -55,10 +59,10 @@ while True:
 
                 # export wav standard sound track
                 print('[INFO] Exporting ' + fileName[:fileName.find('.')] + "_out.wav")
-                original_audio_file.export(fileName[:fileName.find('.')] + "_out.wav", format="wav")
+                original_audio_file.export(path + fileName[:fileName.find('.')] + "_out.wav", format="wav")
 
                 try:
-                    f = wave.open(fileName[:fileName.find('.')] + "_out.wav", 'rb')
+                    f = wave.open(path + fileName[:fileName.find('.')] + "_out.wav", 'rb')
 
                     params = f.getparams()  # get wave file params
                     print("[INFO] wav params is :", params)
@@ -68,7 +72,7 @@ while True:
                     LENGTH = f.getnframes()
                     WIDTH = bits
                     try:
-                        fData = open(fileName[:fileName.find('.')] + '.mif', 'w')
+                        fData = open(path + fileName[:fileName.find('.')] + '.mif', 'w')
                         fData.write('Depth = ' + str(LENGTH) + ';\n')
                         fData.write('Width = ' + str(WIDTH) + ';\n')
                         fData.write('Address_radix=dec;\n')
@@ -99,7 +103,7 @@ while True:
                         fData.write('END;')
                         f.close()  # close wave file
                         fData.close()  # close data file
-                        print(fileName + ' convert to ' + fileName[:fileName.find('.')] + '.mif COMPLETE.')
+                        print('[SUCCESS]' + fileName + ' convert to ' + fileName[:fileName.find('.')] + '.mif COMPLETE.')
                         print('---------------------------\n')
                     except:
                         print("Error: cannot write file: " + fileName + ".mif")
