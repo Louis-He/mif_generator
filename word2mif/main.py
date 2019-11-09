@@ -20,11 +20,20 @@ if __name__ == '__main__':
     except ValueError:
         print("Not an integer")
         exit(1)
-    img = Image.new('RGB', (int(len(text) * fontsize * 0.45), fontsize), color=(255, 255, 255))
+
+    backgroundR = int(input("Background Color R-channel(int[0~255]): "))
+    backgroundG = int(input("Background Color G-channel(int[0~255]): "))
+    backgroundB = int(input("Background Color B-channel(int[0~255]): "))
+
+    colorR = int(input("Font Color R-channel(int[0~255]): "))
+    colorG = int(input("Font Color G-channel(int[0~255]): "))
+    colorB = int(input("Font Color B-channel(int[0~255]): "))
+
+    img = Image.new('RGB', (int(len(text) * fontsize * 0.45), fontsize), color=(backgroundR, backgroundG, backgroundB))
 
     font = ImageFont.truetype(font="Arial.ttf", size=fontsize)
     d = ImageDraw.Draw(img)
-    d.text((0, -fontsize * 0.12), text, fill=(0, 255, 0), font=font)
+    d.text((0, -fontsize * 0.12), text, fill=(colorR, colorG, colorB), font=font)
 
     img.save('out.png')
     imgConverted = img.load()

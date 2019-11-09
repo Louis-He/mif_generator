@@ -13,7 +13,7 @@ Generate mif file for text.
 python3 main.py
 ```
 
-2. Specify your requirement following input prompts.
+2. Specify your requirements following input prompts.
 
 3. The program will generate three files: out.mif, out.png, outConvert.png.
 
@@ -23,3 +23,19 @@ python3 main.py
   * Text: Anything but not too long.
   * Font Size: 10 ~ 25
   * bits: 2 ~ 3 denpends on how big the memory
+  
+6. Example input:
+```
+Enter Text: Hello
+Font Size(pixel, int): 20
+bits(up to 8, int): 2
+Background Color R-channel(int[0~255]): 255
+Background Color G-channel(int[0~255]): 255
+Background Color B-channel(int[0~255]): 255
+Background Color R-channel(int[0~255]): 127
+Background Color G-channel(int[0~255]): 0
+Background Color B-channel(int[0~255]): 0
+```
+
+7. Example output:
+  * out.mif, out.png, outConvert.png as in the directory.
