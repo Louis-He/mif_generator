@@ -54,7 +54,7 @@ if __name__ == '__main__':
     with open('out.mif', 'w+') as f:
         f.write("-- Created with word2mif file converter\n")
         f.write("-- @ Louis-He\n-- Open-source Project: https://github.com/Louis-He/mif_generator\n\n")
-        f.write("WIDTH=" + str(bits) + ";\n")
+        f.write("WIDTH=" + str(bits * 3) + ";\n")
         f.write("DEPTH=" + str(length * height) + ";\n\n")
         f.write("Address_radix=hex;\nData_radix=bin;\nContent\nBEGIN\n")
 
