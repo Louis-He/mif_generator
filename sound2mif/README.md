@@ -24,12 +24,24 @@ For mac user, you can just run `exe/sound2mif_mac` and it should work. If not or
 python3 main.py
 ```
 
-**Common Error**: ImportError: `No module named wave` or `No module named pydub`
+**Common Error 1**: ImportError: `No module named wave` or `No module named pydub`
 
 **Solution**: run 
 ```Bash
 sudo pip3 install -r requirements.txt
 ```
+
+**Common Error 2**: ImportError: `RuntimeWarning: Couldn't find ffprobe or avprobe - defaulting to ffprobe, but may not work Error: read in original file FAILED`
+
+**Solution**: 
+You need to install ffmpeg.
+
+Install brew first and install ffmpeg
+```Bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install ffmpeg
+```
+
 3. Recommendation of parameters
   * Frame rate（Hz）: at least 5000Hz.
   * bits width: 5 or more.
